@@ -1,0 +1,102 @@
+:root {
+    /* colors */
+    --primary-color: #dfdfe2;
+    --dark-purple: #3b3b5f;
+    --light-grey: #666666;
+    --dark-grey: #444444;
+    --white-dot: #FFFFFF;
+    --yellow-volume: #f1be32;
+    --white-letters: white;
+
+    /* font sizes
+    --root-font-size: 1px;
+    font-size: var(--root-font-size); */
+
+    /* font-families */
+    --font-headline: "Roboto Mono", monospace;
+    --font-family: "Lato", sans-serif;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+body{
+  
+}
+.drum-machine{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  border: 2px solid var(--dark-purple);
+  background-color:var(--dark-purple);
+  padding: 40px;
+   
+}
+.pad-bank{
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-rows: repeat(3, 2fr);
+  gap: 8px;
+}
+.drum-pad{
+  font-size: 1.5rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  color: var(--white-letters);
+  background-color:var(--light-grey);
+  box-shadow: none;
+  border: 2px solid yellow;
+  box-shadow: 6px 6px 2px 1px rgb(0 0 255 / 0.2);
+}
+.display{
+  background-color:var(--dark-grey);
+  width:250px;
+  height: 50px;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  border-radius: 5px;
+}
+
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* --- THE BAR (TRACK) --- */
+/* Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--yellow-volume); /* Your Yellow Hex */
+  height: 8px;
+  border-radius: 4px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background: var(--white-dot); /* White Dot */
+  border: 2px solid #ccc; /* Subtle border so it doesn't vanish on white backgrounds */
+  border-radius: 50%;
+  margin-top: -6px; /* Centers dot on the 8px track */
+}
+.label{
+  color:var(--white-letters);
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+
+@media (max-width: 300px) {
+  .pad-bank {
+    grid-template-columns: 1fr; /* Stacks to 1 column on small screens */
+  }
+}
